@@ -3749,6 +3749,99 @@ button:hover { color: #fff; }
   }
 }
 
+/* === Optimasi Responsiv dan Performa Mobile === */
+@media (max-width: 768px) {
+  /* Portal lebih ringan */
+  .portal {
+    width: 180px;
+    height: 180px;
+    border-width: 2px;
+    box-shadow:
+      0 0 40px rgba(212, 175, 55, 0.8),
+      0 0 80px rgba(45, 90, 74, 0.5),
+      inset 0 0 25px rgba(212, 175, 55, 0.3);
+  }
+  .portal::before {
+    width: 90%;
+    height: 90%;
+    filter: blur(2px);
+  }
+
+  /* Kurangi wave hero biar gak lag */
+  .energy-wave {
+    transform: translate(-50%, -50%) scale(0.6);
+    border-width: 1px;
+  }
+
+  .wave-1, .wave-2, .wave-3 {
+    width: 60%;
+    height: 60%;
+    border-width: 1px;
+  }
+
+  /* Hero avatar dan teks biar proporsional */
+  .hero-avatar {
+    width: 140px;
+    height: 140px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+  }
+
+  .hero .tagline {
+    font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+  }
+
+  .hero .cta-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  /* Glow dan partikel dikurangin, bukan dihapus */
+  .avatar-glow {
+    opacity: 0.4;
+    filter: blur(2px);
+  }
+
+  .floating-orb {
+    opacity: 0.4;
+    filter: blur(2px);
+  }
+
+  /* Hero section padding biar gak kepotong */
+  .hero {
+    height: auto;
+    padding: 3rem 1rem;
+  }
+}
+
+/* Layar super kecil (<480px) */
+@media (max-width: 480px) {
+  .portal {
+    width: 150px;
+    height: 150px;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero .tagline {
+    font-size: 0.9rem;
+  }
+
+  .hero-avatar {
+    width: 120px;
+    height: 120px;
+  }
+}
+/* Matikan efek matrix rain di HP */
+@media (max-width: 768px) {
+  .matrix-rain {
+    display: none !important;
+  }
+}
 
   </style>
   <style>@view-transition { navigation: auto; }</style>
