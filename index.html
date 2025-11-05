@@ -3659,67 +3659,93 @@ button {
 button:hover { color: #fff; }
 #volume { width: 100px; }
 
-/* OPTIMIZATION FOR MOBILE */
+/* === RESPONSIVE FIXES UNTUK MOBILE === */
 @media (max-width: 768px) {
-  /* Kurangi intensitas animasi di HP */
-  * {
-    animation-duration: 0.6s !important;
-    transition-duration: 0.4s !important;
-  }
-
-  /* Welcome Modal & Intro Screen */
-  #intro-screen {
-    transition: opacity 1s ease !important;
-    background: #0f1419 !important;
-  }
-  .curtain,
-  .clover,
+  /* Welcome modal (intro-screen & book) */
   .book-container {
-    animation: none !important;
-    box-shadow: none !important;
+    width: 200px;
+    height: 280px;
   }
 
-  /* Portal: hilangkan blur & heavy scale */
-  .portal-container {
-    backdrop-filter: none !important;
-    animation: none !important;
+  .clover-container {
+    width: 120px;
+    height: 120px;
   }
+
+  .clover-center {
+    width: 100px;
+    height: 100px;
+  }
+
+  .welcome-text {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .explore-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+  }
+
+  /* Portal animation */
   .portal {
-    width: 160px !important;
-    height: 160px !important;
-    box-shadow: 0 0 40px rgba(212,175,55,0.6) !important;
+    width: 180px;
+    height: 180px;
   }
 
-  /* Hero Section */
+  /* Hero section */
   .hero {
-    padding: 2rem 1rem !important;
-    background: linear-gradient(180deg, #1a3a2e 0%, #0f1419 100%) !important;
+    padding: 2rem 1rem;
+    height: auto;
   }
+
+  .hero h1 {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  .hero .tagline {
+    font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+    margin-bottom: 2rem;
+  }
+
+  .hero-avatar {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 2rem;
+  }
+
+  .hero .cta-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+  }
+
+  /* Performa ringan */
   .floating-orb,
   .energy-wave,
   .light-particle {
-    display: none !important; /* matiin partikel */
+    display: none; /* sembunyiin efek berat di layar kecil */
   }
+}
+
+/* Responsif ekstrem (HP kecil <480px) */
+@media (max-width: 480px) {
+  .book-container {
+    width: 160px;
+    height: 220px;
+  }
+
   .hero h1 {
-    font-size: 2rem !important;
-    text-shadow: none !important;
-  }
-  .hero-avatar {
-    width: 120px !important;
-    height: 120px !important;
-    animation: none !important;
+    font-size: 1.8rem;
   }
 
-  /* Matikan efek blur & shadow berat */
-  .about-content,
-  .skill-card {
-    backdrop-filter: none !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+  .hero .tagline {
+    font-size: 0.9rem;
   }
 
-  /* Kurangi GPU load */
-  html, body, * {
-    will-change: auto !important;
+  .explore-btn,
+  .hero .cta-btn {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -3969,6 +3995,117 @@ button:hover { color: #fff; }
       </div>
      </div>
     </div>
+    <section id="skills-zenith" class="skills-zenith" aria-labelledby="skillsTitle">
+  <div class="zen-bg">
+    <div class="zen-breath ring-a"></div>
+    <div class="zen-breath ring-b"></div>
+  </div>
+
+  <div class="zen-wrap">
+    <header class="zen-header">
+      <h2 id="skillsTitle">Talent & Skills — ZENITH System</h2>
+      <p class="zen-lead">Personal core — hyper-awareness, meta-cognition, shadow integration. Social core — social mastery, orchestration, leadership, public presence. Klik card untuk detail.</p>
+      <div class="zen-legend">
+        <span><i class="dot personal"></i> Personal</span>
+        <span><i class="dot social"></i> Social</span>
+        <span><i class="dot perform"></i> Performance</span>
+      </div>
+    </header>
+
+    <div class="zen-timeline">
+      <!-- vertical center line -->
+      <div class="zen-line"></div>
+
+      <!-- LEFT column: Personal Core (cards slide from left) -->
+      <div class="zen-column left">
+        <article class="zen-card" data-core="personal" data-score="96" tabindex="0">
+          <div class="card-inner">
+            <div class="card-head"><h3>Hyper Awareness</h3><span class="pill">Personal</span></div>
+            <p class="card-txt">Deteksi detail mikro & makro — gestur, diksi, mimik, ruang. Mode aktif/pasif, jadi sensor internal.</p>
+            <div class="card-foot">
+              <div class="mini-meter"><i style="width:0%"></i></div>
+              <button class="detail-btn">Lihat Detail</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="zen-card" data-core="personal" data-score="92" tabindex="0">
+          <div class="card-inner">
+            <div class="card-head"><h3>Meta-Cognition (ZENITH)</h3><span class="pill">Personal</span></div>
+            <p class="card-txt">Menyintesis fragmen: mimpi, simbol, pengalaman jadi model konseptual — engine internal lo.</p>
+            <div class="card-foot">
+              <div class="mini-meter"><i style="width:0%"></i></div>
+              <button class="btn-ghost detail-btn">Lihat Detail</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="zen-card" data-core="personal" data-score="90" tabindex="0">
+          <div class="card-inner">
+            <div class="card-head"><h3>Resilience / Transmutation</h3><span class="pill">Personal</span></div>
+            <p class="card-txt">Trauma jadi bahan bakar pertumbuhan — contoh: hujatan kelas → strategi adaptif.</p>
+            <div class="card-foot">
+              <div class="mini-meter"><i style="width:0%"></i></div>
+              <button class="btn-ghost detail-btn">Lihat Detail</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- RIGHT column: Social Core (cards slide from right) -->
+      <div class="zen-column right">
+        <article class="zen-card" data-core="social" data-score="94" tabindex="0">
+          <div class="card-inner">
+            <div class="card-head"><h3>Social-Cognitive Mastery</h3><span class="pill">Social</span></div>
+            <p class="card-txt">Baca motif & prediksi dinamika sosial real-time. Adaptasi cepat ke pola relasi.</p>
+            <div class="card-foot">
+              <div class="mini-meter"><i style="width:0%"></i></div>
+              <button class="btn-ghost detail-btn">Lihat Detail</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="zen-card" data-core="social" data-score="90" tabindex="0">
+          <div class="card-inner">
+            <div class="card-head"><h3>Psychosocial Orchestration</h3><span class="pill">Social</span></div>
+            <p class="card-txt">Mengarahkan mood kolektif: timing, nonverbal, entrainment — pulihkan tim tanpa paksaan.</p>
+            <div class="card-foot">
+              <div class="mini-meter"><i style="width:0%"></i></div>
+              <button class="btn-ghost detail-btn">Lihat Detail</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="zen-card" data-core="perform" data-score="95" tabindex="0">
+          <div class="card-inner">
+            <div class="card-head"><h3>Public Speaking & Flow</h3><span class="pill">Performance</span></div>
+            <p class="card-txt">Tampil lepas, improvisasi, presence kuat — lupa detail tapi hadir total.</p>
+            <div class="card-foot">
+              <div class="mini-meter"><i style="width:0%"></i></div>
+              <button class="btn-ghost detail-btn">Lihat Detail</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal detail -->
+  <div id="zenModal" class="zen-modal" aria-hidden="true" role="dialog">
+    <div class="zen-modal-card" role="document">
+      <button class="modal-close" aria-label="close">✕</button>
+      <div class="modal-head">
+        <h3 class="m-title"></h3>
+        <div class="m-tags"><span class="m-core"></span><span class="m-rarity"></span></div>
+      </div>
+      <div class="m-body"></div>
+      <div class="m-footer">
+        <div class="m-evidence"><strong>Evidence:</strong> SD → SMP → SMA, Fortym, presentations, project recovery.</div>
+        <div class="m-actions"><button class="btn-primary copy-snap">Copy Snapshot</button></div>
+      </div>
+    </div>
+  </div>
+</section>
     
    </section><!-- Favorite Books -->
    <section id="books">
